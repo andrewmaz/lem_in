@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/amazurok/Documents/lem_in_f/ft_add_room.c">
+			<Option target="lem_in_f"/>
+		</Unit>
 		<Unit filename="/Users/amazurok/Documents/lem_in_f/ft_new_map.c">
 			<Option target="lem_in_f"/>
 		</Unit>

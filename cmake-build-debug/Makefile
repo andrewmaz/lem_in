@@ -123,6 +123,33 @@ lem_in_f/fast:
 	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/build
 .PHONY : lem_in_f/fast
 
+ft_add_room.o: ft_add_room.c.o
+
+.PHONY : ft_add_room.o
+
+# target to build an object file
+ft_add_room.c.o:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_add_room.c.o
+.PHONY : ft_add_room.c.o
+
+ft_add_room.i: ft_add_room.c.i
+
+.PHONY : ft_add_room.i
+
+# target to preprocess a source file
+ft_add_room.c.i:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_add_room.c.i
+.PHONY : ft_add_room.c.i
+
+ft_add_room.s: ft_add_room.c.s
+
+.PHONY : ft_add_room.s
+
+# target to generate assembly for a file
+ft_add_room.c.s:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_add_room.c.s
+.PHONY : ft_add_room.c.s
+
 ft_new_map.o: ft_new_map.c.o
 
 .PHONY : ft_new_map.o
@@ -2562,6 +2589,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lem_in_f"
+	@echo "... ft_add_room.o"
+	@echo "... ft_add_room.i"
+	@echo "... ft_add_room.s"
 	@echo "... ft_new_map.o"
 	@echo "... ft_new_map.i"
 	@echo "... ft_new_map.s"

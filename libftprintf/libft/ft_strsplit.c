@@ -6,13 +6,13 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 19:50:47 by amazurok          #+#    #+#             */
-/*   Updated: 2017/11/06 13:14:51 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/03/28 14:20:53 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_numword(const char *s, char c)
+int	ft_num_word(const char *s, char c)
 {
 	int i;
 	int res;
@@ -28,7 +28,7 @@ static int	ft_numword(const char *s, char c)
 	return (res);
 }
 
-static int	ft_wl(const char *s, char c)
+int	ft_len_word(const char *s, char c)
 {
 	int i;
 
@@ -60,15 +60,15 @@ char		**ft_strsplit(char const *s, char c)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (!(res = (char**)malloc(sizeof(char*) * (ft_numword(s, c) + 1))))
+	if (!(res = (char**)malloc(sizeof(char*) * (ft_num_word(s, c) + 1))))
 		return (NULL);
-	while (i < ft_numword(s, c))
+	while (i < ft_num_word(s, c))
 	{
 		while (s[j] == c)
 			j++;
-		if (!(res[i] = ft_strsub(s, j, ft_wl(s + j, c))))
+		if (!(res[i] = ft_strsub(s, j, ft_len_word(s + j, c))))
 			return (ft_free(res));
-		j += ft_wl(s + j, c);
+		j += ft_len_word(s + j, c);
 		i++;
 	}
 	res[i] = NULL;

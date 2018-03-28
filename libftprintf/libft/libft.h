@@ -91,6 +91,8 @@ void				ft_lstadd_end(t_list **lst, t_list *end);
 int					ft_sqrt(int nb);
 void				ft_char_replace(char *str, char s, char f);
 char				*ft_realloc(char *str, int size);
+int					ft_num_word(const char *s, char c);
+int					ft_len_word(const char *s, char c);
 
 int					get_next_line(const int fd, char **line);
 int					ft_printf(const char *format, ...);

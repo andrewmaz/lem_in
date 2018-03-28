@@ -89,6 +89,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in_f.dir/libftprintf/libft/get_next_line.c.o"
   "CMakeFiles/lem_in_f.dir/main.c.o"
   "CMakeFiles/lem_in_f.dir/ft_new_map.c.o"
+  "CMakeFiles/lem_in_f.dir/ft_add_room.c.o"
   "lem_in_f.pdb"
   "lem_in_f"
 )

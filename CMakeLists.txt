@@ -94,4 +94,4 @@ add_executable(lem_in_f
         libftprintf/libft/ft_toupper.c
         libftprintf/libft/get_next_line.c
         libftprintf/libft/libft.h
-        main.c lem_in.h ft_new_map.c)
+        main.c lem_in.h ft_new_map.c ft_add_room.c)
