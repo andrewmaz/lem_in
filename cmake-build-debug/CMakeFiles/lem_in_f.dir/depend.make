@@ -5,9 +5,17 @@ CMakeFiles/lem_in_f.dir/ft_add_room.c.o: ../ft_add_room.c
 CMakeFiles/lem_in_f.dir/ft_add_room.c.o: ../lem_in.h
 CMakeFiles/lem_in_f.dir/ft_add_room.c.o: ../libftprintf/libft/libft.h
 
-CMakeFiles/lem_in_f.dir/ft_new_map.c.o: ../ft_new_map.c
-CMakeFiles/lem_in_f.dir/ft_new_map.c.o: ../lem_in.h
-CMakeFiles/lem_in_f.dir/ft_new_map.c.o: ../libftprintf/libft/libft.h
+CMakeFiles/lem_in_f.dir/ft_del.c.o: ../ft_del.c
+CMakeFiles/lem_in_f.dir/ft_del.c.o: ../lem_in.h
+CMakeFiles/lem_in_f.dir/ft_del.c.o: ../libftprintf/libft/libft.h
+
+CMakeFiles/lem_in_f.dir/ft_new.c.o: ../ft_new.c
+CMakeFiles/lem_in_f.dir/ft_new.c.o: ../lem_in.h
+CMakeFiles/lem_in_f.dir/ft_new.c.o: ../libftprintf/libft/libft.h
+
+CMakeFiles/lem_in_f.dir/ft_read.c.o: ../ft_read.c
+CMakeFiles/lem_in_f.dir/ft_read.c.o: ../lem_in.h
+CMakeFiles/lem_in_f.dir/ft_read.c.o: ../libftprintf/libft/libft.h
 
 CMakeFiles/lem_in_f.dir/libftprintf/ft_printf/ft_addchar.c.o: ../libftprintf/ft_printf/ft_addchar.c
 

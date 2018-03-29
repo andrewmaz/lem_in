@@ -150,32 +150,86 @@ ft_add_room.c.s:
 	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_add_room.c.s
 .PHONY : ft_add_room.c.s
 
-ft_new_map.o: ft_new_map.c.o
+ft_del.o: ft_del.c.o
 
-.PHONY : ft_new_map.o
+.PHONY : ft_del.o
 
 # target to build an object file
-ft_new_map.c.o:
-	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_new_map.c.o
-.PHONY : ft_new_map.c.o
+ft_del.c.o:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_del.c.o
+.PHONY : ft_del.c.o
 
-ft_new_map.i: ft_new_map.c.i
+ft_del.i: ft_del.c.i
 
-.PHONY : ft_new_map.i
+.PHONY : ft_del.i
 
 # target to preprocess a source file
-ft_new_map.c.i:
-	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_new_map.c.i
-.PHONY : ft_new_map.c.i
+ft_del.c.i:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_del.c.i
+.PHONY : ft_del.c.i
 
-ft_new_map.s: ft_new_map.c.s
+ft_del.s: ft_del.c.s
 
-.PHONY : ft_new_map.s
+.PHONY : ft_del.s
 
 # target to generate assembly for a file
-ft_new_map.c.s:
-	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_new_map.c.s
-.PHONY : ft_new_map.c.s
+ft_del.c.s:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_del.c.s
+.PHONY : ft_del.c.s
+
+ft_new.o: ft_new.c.o
+
+.PHONY : ft_new.o
+
+# target to build an object file
+ft_new.c.o:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_new.c.o
+.PHONY : ft_new.c.o
+
+ft_new.i: ft_new.c.i
+
+.PHONY : ft_new.i
+
+# target to preprocess a source file
+ft_new.c.i:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_new.c.i
+.PHONY : ft_new.c.i
+
+ft_new.s: ft_new.c.s
+
+.PHONY : ft_new.s
+
+# target to generate assembly for a file
+ft_new.c.s:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_new.c.s
+.PHONY : ft_new.c.s
+
+ft_read.o: ft_read.c.o
+
+.PHONY : ft_read.o
+
+# target to build an object file
+ft_read.c.o:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_read.c.o
+.PHONY : ft_read.c.o
+
+ft_read.i: ft_read.c.i
+
+.PHONY : ft_read.i
+
+# target to preprocess a source file
+ft_read.c.i:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_read.c.i
+.PHONY : ft_read.c.i
+
+ft_read.s: ft_read.c.s
+
+.PHONY : ft_read.s
+
+# target to generate assembly for a file
+ft_read.c.s:
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_read.c.s
+.PHONY : ft_read.c.s
 
 libftprintf/ft_printf/ft_addchar.o: libftprintf/ft_printf/ft_addchar.c.o
 
@@ -2592,9 +2646,15 @@ help:
 	@echo "... ft_add_room.o"
 	@echo "... ft_add_room.i"
 	@echo "... ft_add_room.s"
-	@echo "... ft_new_map.o"
-	@echo "... ft_new_map.i"
-	@echo "... ft_new_map.s"
+	@echo "... ft_del.o"
+	@echo "... ft_del.i"
+	@echo "... ft_del.s"
+	@echo "... ft_new.o"
+	@echo "... ft_new.i"
+	@echo "... ft_new.s"
+	@echo "... ft_read.o"
+	@echo "... ft_read.i"
+	@echo "... ft_read.s"
 	@echo "... libftprintf/ft_printf/ft_addchar.o"
 	@echo "... libftprintf/ft_printf/ft_addchar.i"
 	@echo "... libftprintf/ft_printf/ft_addchar.s"

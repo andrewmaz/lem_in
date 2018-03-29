@@ -10,12 +10,26 @@
 lem_in.h
 /Users/amazurok/Documents/lem_in_f/lem_in.h
 
-/Users/amazurok/Documents/lem_in_f/ft_new_map.c
+/Users/amazurok/Documents/lem_in_f/ft_del.c
 lem_in.h
 /Users/amazurok/Documents/lem_in_f/lem_in.h
 
+/Users/amazurok/Documents/lem_in_f/ft_new.c
+lem_in.h
+/Users/amazurok/Documents/lem_in_f/lem_in.h
+
+/Users/amazurok/Documents/lem_in_f/ft_read.c
+stdio.h
+-
+lem_in.h
+/Users/amazurok/Documents/lem_in_f/lem_in.h
+errno.h
+-
+
 /Users/amazurok/Documents/lem_in_f/lem_in.h
 stdlib.h
+-
+stdio.h
 -
 libftprintf/libft/libft.h
 /Users/amazurok/Documents/lem_in_f/libftprintf/libft/libft.h

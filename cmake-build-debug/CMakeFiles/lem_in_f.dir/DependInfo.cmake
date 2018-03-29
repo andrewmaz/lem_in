@@ -5,7 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/amazurok/Documents/lem_in_f/ft_add_room.c" "/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles/lem_in_f.dir/ft_add_room.c.o"
-  "/Users/amazurok/Documents/lem_in_f/ft_new_map.c" "/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles/lem_in_f.dir/ft_new_map.c.o"
+  "/Users/amazurok/Documents/lem_in_f/ft_del.c" "/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles/lem_in_f.dir/ft_del.c.o"
+  "/Users/amazurok/Documents/lem_in_f/ft_new.c" "/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles/lem_in_f.dir/ft_new.c.o"
+  "/Users/amazurok/Documents/lem_in_f/ft_read.c" "/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles/lem_in_f.dir/ft_read.c.o"
   "/Users/amazurok/Documents/lem_in_f/libftprintf/ft_printf/ft_addchar.c" "/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles/lem_in_f.dir/libftprintf/ft_printf/ft_addchar.c.o"
   "/Users/amazurok/Documents/lem_in_f/libftprintf/ft_printf/ft_check_key.c" "/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles/lem_in_f.dir/libftprintf/ft_printf/ft_check_key.c.o"
   "/Users/amazurok/Documents/lem_in_f/libftprintf/ft_printf/ft_del_key.c" "/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles/lem_in_f.dir/libftprintf/ft_printf/ft_del_key.c.o"

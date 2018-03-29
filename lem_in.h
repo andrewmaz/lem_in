@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 15:30:57 by amazurok          #+#    #+#             */
-/*   Updated: 2018/03/28 14:38:58 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/03/29 15:36:21 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LEM_IN_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include "libftprintf/libft/libft.h"
 
 typedef struct	s_ind
@@ -35,6 +36,13 @@ typedef struct	s_room
 }				t_room;
 
 t_room		*ft_new_room(void);
+int			**ft_new_map(size_t	size);
 t_room		*ft_add_room(t_room *room);
+size_t		ft_read_ants(int fd);
+t_room		*ft_read_rooms(char *str, t_room *room, int s_e);
+void	 	ft_read_connection(char *str, int **map, t_room *room);
+void		ft_del_dstr(char **dstr);
+int			ft_search_ind(char *name, t_room *room);
 
+int			ft_is_number(char *nbr, int sig);
 #endif

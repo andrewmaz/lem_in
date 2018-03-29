@@ -83,7 +83,13 @@
 		<Unit filename="/Users/amazurok/Documents/lem_in_f/ft_add_room.c">
 			<Option target="lem_in_f"/>
 		</Unit>
-		<Unit filename="/Users/amazurok/Documents/lem_in_f/ft_new_map.c">
+		<Unit filename="/Users/amazurok/Documents/lem_in_f/ft_del.c">
+			<Option target="lem_in_f"/>
+		</Unit>
+		<Unit filename="/Users/amazurok/Documents/lem_in_f/ft_new.c">
+			<Option target="lem_in_f"/>
+		</Unit>
+		<Unit filename="/Users/amazurok/Documents/lem_in_f/ft_read.c">
 			<Option target="lem_in_f"/>
 		</Unit>
 		<Unit filename="/Users/amazurok/Documents/lem_in_f/lem_in.h">

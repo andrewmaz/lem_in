@@ -5,8 +5,16 @@ CMakeFiles/lem_in_f.dir/ft_add_room.c.o
  /Users/amazurok/Documents/lem_in_f/ft_add_room.c
  /Users/amazurok/Documents/lem_in_f/lem_in.h
  /Users/amazurok/Documents/lem_in_f/libftprintf/libft/libft.h
-CMakeFiles/lem_in_f.dir/ft_new_map.c.o
- /Users/amazurok/Documents/lem_in_f/ft_new_map.c
+CMakeFiles/lem_in_f.dir/ft_del.c.o
+ /Users/amazurok/Documents/lem_in_f/ft_del.c
+ /Users/amazurok/Documents/lem_in_f/lem_in.h
+ /Users/amazurok/Documents/lem_in_f/libftprintf/libft/libft.h
+CMakeFiles/lem_in_f.dir/ft_new.c.o
+ /Users/amazurok/Documents/lem_in_f/ft_new.c
+ /Users/amazurok/Documents/lem_in_f/lem_in.h
+ /Users/amazurok/Documents/lem_in_f/libftprintf/libft/libft.h
+CMakeFiles/lem_in_f.dir/ft_read.c.o
+ /Users/amazurok/Documents/lem_in_f/ft_read.c
  /Users/amazurok/Documents/lem_in_f/lem_in.h
  /Users/amazurok/Documents/lem_in_f/libftprintf/libft/libft.h
 CMakeFiles/lem_in_f.dir/libftprintf/ft_printf/ft_addchar.c.o

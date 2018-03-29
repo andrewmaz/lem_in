@@ -2193,28 +2193,28 @@ CMakeFiles/lem_in_f.dir/main.c.o.provides: CMakeFiles/lem_in_f.dir/main.c.o.requ
 CMakeFiles/lem_in_f.dir/main.c.o.provides.build: CMakeFiles/lem_in_f.dir/main.c.o
 
 
-CMakeFiles/lem_in_f.dir/ft_new_map.c.o: CMakeFiles/lem_in_f.dir/flags.make
-CMakeFiles/lem_in_f.dir/ft_new_map.c.o: ../ft_new_map.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/lem_in_f.dir/ft_new_map.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in_f.dir/ft_new_map.c.o   -c /Users/amazurok/Documents/lem_in_f/ft_new_map.c
+CMakeFiles/lem_in_f.dir/ft_new.c.o: CMakeFiles/lem_in_f.dir/flags.make
+CMakeFiles/lem_in_f.dir/ft_new.c.o: ../ft_new.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/lem_in_f.dir/ft_new.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in_f.dir/ft_new.c.o   -c /Users/amazurok/Documents/lem_in_f/ft_new.c
 
-CMakeFiles/lem_in_f.dir/ft_new_map.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in_f.dir/ft_new_map.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/amazurok/Documents/lem_in_f/ft_new_map.c > CMakeFiles/lem_in_f.dir/ft_new_map.c.i
+CMakeFiles/lem_in_f.dir/ft_new.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in_f.dir/ft_new.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/amazurok/Documents/lem_in_f/ft_new.c > CMakeFiles/lem_in_f.dir/ft_new.c.i
 
-CMakeFiles/lem_in_f.dir/ft_new_map.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in_f.dir/ft_new_map.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amazurok/Documents/lem_in_f/ft_new_map.c -o CMakeFiles/lem_in_f.dir/ft_new_map.c.s
+CMakeFiles/lem_in_f.dir/ft_new.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in_f.dir/ft_new.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amazurok/Documents/lem_in_f/ft_new.c -o CMakeFiles/lem_in_f.dir/ft_new.c.s
 
-CMakeFiles/lem_in_f.dir/ft_new_map.c.o.requires:
+CMakeFiles/lem_in_f.dir/ft_new.c.o.requires:
 
-.PHONY : CMakeFiles/lem_in_f.dir/ft_new_map.c.o.requires
+.PHONY : CMakeFiles/lem_in_f.dir/ft_new.c.o.requires
 
-CMakeFiles/lem_in_f.dir/ft_new_map.c.o.provides: CMakeFiles/lem_in_f.dir/ft_new_map.c.o.requires
-	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_new_map.c.o.provides.build
-.PHONY : CMakeFiles/lem_in_f.dir/ft_new_map.c.o.provides
+CMakeFiles/lem_in_f.dir/ft_new.c.o.provides: CMakeFiles/lem_in_f.dir/ft_new.c.o.requires
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_new.c.o.provides.build
+.PHONY : CMakeFiles/lem_in_f.dir/ft_new.c.o.provides
 
-CMakeFiles/lem_in_f.dir/ft_new_map.c.o.provides.build: CMakeFiles/lem_in_f.dir/ft_new_map.c.o
+CMakeFiles/lem_in_f.dir/ft_new.c.o.provides.build: CMakeFiles/lem_in_f.dir/ft_new.c.o
 
 
 CMakeFiles/lem_in_f.dir/ft_add_room.c.o: CMakeFiles/lem_in_f.dir/flags.make
@@ -2239,6 +2239,54 @@ CMakeFiles/lem_in_f.dir/ft_add_room.c.o.provides: CMakeFiles/lem_in_f.dir/ft_add
 .PHONY : CMakeFiles/lem_in_f.dir/ft_add_room.c.o.provides
 
 CMakeFiles/lem_in_f.dir/ft_add_room.c.o.provides.build: CMakeFiles/lem_in_f.dir/ft_add_room.c.o
+
+
+CMakeFiles/lem_in_f.dir/ft_read.c.o: CMakeFiles/lem_in_f.dir/flags.make
+CMakeFiles/lem_in_f.dir/ft_read.c.o: ../ft_read.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/lem_in_f.dir/ft_read.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in_f.dir/ft_read.c.o   -c /Users/amazurok/Documents/lem_in_f/ft_read.c
+
+CMakeFiles/lem_in_f.dir/ft_read.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in_f.dir/ft_read.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/amazurok/Documents/lem_in_f/ft_read.c > CMakeFiles/lem_in_f.dir/ft_read.c.i
+
+CMakeFiles/lem_in_f.dir/ft_read.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in_f.dir/ft_read.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amazurok/Documents/lem_in_f/ft_read.c -o CMakeFiles/lem_in_f.dir/ft_read.c.s
+
+CMakeFiles/lem_in_f.dir/ft_read.c.o.requires:
+
+.PHONY : CMakeFiles/lem_in_f.dir/ft_read.c.o.requires
+
+CMakeFiles/lem_in_f.dir/ft_read.c.o.provides: CMakeFiles/lem_in_f.dir/ft_read.c.o.requires
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_read.c.o.provides.build
+.PHONY : CMakeFiles/lem_in_f.dir/ft_read.c.o.provides
+
+CMakeFiles/lem_in_f.dir/ft_read.c.o.provides.build: CMakeFiles/lem_in_f.dir/ft_read.c.o
+
+
+CMakeFiles/lem_in_f.dir/ft_del.c.o: CMakeFiles/lem_in_f.dir/flags.make
+CMakeFiles/lem_in_f.dir/ft_del.c.o: ../ft_del.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/lem_in_f.dir/ft_del.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in_f.dir/ft_del.c.o   -c /Users/amazurok/Documents/lem_in_f/ft_del.c
+
+CMakeFiles/lem_in_f.dir/ft_del.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in_f.dir/ft_del.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/amazurok/Documents/lem_in_f/ft_del.c > CMakeFiles/lem_in_f.dir/ft_del.c.i
+
+CMakeFiles/lem_in_f.dir/ft_del.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in_f.dir/ft_del.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amazurok/Documents/lem_in_f/ft_del.c -o CMakeFiles/lem_in_f.dir/ft_del.c.s
+
+CMakeFiles/lem_in_f.dir/ft_del.c.o.requires:
+
+.PHONY : CMakeFiles/lem_in_f.dir/ft_del.c.o.requires
+
+CMakeFiles/lem_in_f.dir/ft_del.c.o.provides: CMakeFiles/lem_in_f.dir/ft_del.c.o.requires
+	$(MAKE) -f CMakeFiles/lem_in_f.dir/build.make CMakeFiles/lem_in_f.dir/ft_del.c.o.provides.build
+.PHONY : CMakeFiles/lem_in_f.dir/ft_del.c.o.provides
+
+CMakeFiles/lem_in_f.dir/ft_del.c.o.provides.build: CMakeFiles/lem_in_f.dir/ft_del.c.o
 
 
 # Object files for target lem_in_f
@@ -2332,8 +2380,10 @@ lem_in_f_OBJECTS = \
 "CMakeFiles/lem_in_f.dir/libftprintf/libft/ft_toupper.c.o" \
 "CMakeFiles/lem_in_f.dir/libftprintf/libft/get_next_line.c.o" \
 "CMakeFiles/lem_in_f.dir/main.c.o" \
-"CMakeFiles/lem_in_f.dir/ft_new_map.c.o" \
-"CMakeFiles/lem_in_f.dir/ft_add_room.c.o"
+"CMakeFiles/lem_in_f.dir/ft_new.c.o" \
+"CMakeFiles/lem_in_f.dir/ft_add_room.c.o" \
+"CMakeFiles/lem_in_f.dir/ft_read.c.o" \
+"CMakeFiles/lem_in_f.dir/ft_del.c.o"
 
 # External object files for target lem_in_f
 lem_in_f_EXTERNAL_OBJECTS =
@@ -2427,11 +2477,13 @@ lem_in_f: CMakeFiles/lem_in_f.dir/libftprintf/libft/ft_tolower.c.o
 lem_in_f: CMakeFiles/lem_in_f.dir/libftprintf/libft/ft_toupper.c.o
 lem_in_f: CMakeFiles/lem_in_f.dir/libftprintf/libft/get_next_line.c.o
 lem_in_f: CMakeFiles/lem_in_f.dir/main.c.o
-lem_in_f: CMakeFiles/lem_in_f.dir/ft_new_map.c.o
+lem_in_f: CMakeFiles/lem_in_f.dir/ft_new.c.o
 lem_in_f: CMakeFiles/lem_in_f.dir/ft_add_room.c.o
+lem_in_f: CMakeFiles/lem_in_f.dir/ft_read.c.o
+lem_in_f: CMakeFiles/lem_in_f.dir/ft_del.c.o
 lem_in_f: CMakeFiles/lem_in_f.dir/build.make
 lem_in_f: CMakeFiles/lem_in_f.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Linking C executable lem_in_f"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/amazurok/Documents/lem_in_f/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Linking C executable lem_in_f"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lem_in_f.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2528,8 +2580,10 @@ CMakeFiles/lem_in_f.dir/requires: CMakeFiles/lem_in_f.dir/libftprintf/libft/ft_t
 CMakeFiles/lem_in_f.dir/requires: CMakeFiles/lem_in_f.dir/libftprintf/libft/ft_toupper.c.o.requires
 CMakeFiles/lem_in_f.dir/requires: CMakeFiles/lem_in_f.dir/libftprintf/libft/get_next_line.c.o.requires
 CMakeFiles/lem_in_f.dir/requires: CMakeFiles/lem_in_f.dir/main.c.o.requires
-CMakeFiles/lem_in_f.dir/requires: CMakeFiles/lem_in_f.dir/ft_new_map.c.o.requires
+CMakeFiles/lem_in_f.dir/requires: CMakeFiles/lem_in_f.dir/ft_new.c.o.requires
 CMakeFiles/lem_in_f.dir/requires: CMakeFiles/lem_in_f.dir/ft_add_room.c.o.requires
+CMakeFiles/lem_in_f.dir/requires: CMakeFiles/lem_in_f.dir/ft_read.c.o.requires
+CMakeFiles/lem_in_f.dir/requires: CMakeFiles/lem_in_f.dir/ft_del.c.o.requires
 
 .PHONY : CMakeFiles/lem_in_f.dir/requires
 
