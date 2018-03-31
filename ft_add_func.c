@@ -1,55 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_del.c                                           :+:      :+:    :+:   */
+/*   ft_add_func.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/29 10:57:50 by amazurok          #+#    #+#             */
-/*   Updated: 2018/03/31 15:08:28 by amazurok         ###   ########.fr       */
+/*   Created: 2018/03/31 15:46:18 by amazurok          #+#    #+#             */
+/*   Updated: 2018/03/31 17:10:13 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	ft_del_dstr(char **dstr)
+size_t	ft_room_count(t_room *room)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
-	while (dstr[i])
-		ft_strdel(&dstr[i++]);
-	free(dstr);
-}
-
-void	ft_del_map(int **map, size_t size)
-{
-	int i;
-
-	i = 0;
-	if (!map)
-		return ;
-	while (i < size)
-		free(map[i++]);
-	free(map);
-}
-
-void	ft_del_room(t_room *room)
-{
-	t_room *tmp;
-
 	while (room)
 	{
-		tmp = room->next;
-		ft_strdel(&room->name);
-		free(room);
-		room = tmp;
+		i++;
+		room = room->next;
 	}
+	return (i);
 }
 
-void	ft_del_all(t_room *room, int **map, size_t size, char *str)
+int		ft_search_ind(char *name, t_room *room)
 {
-	ft_strdel(&str);
-	ft_del_room(room);
-	ft_del_map(map, size);
+	int i;
+
+	i = -1;
+	while (room)
+	{
+		if (ft_strequ(name, room->name))
+			i = room->ind;
+		room = room->next;
+	}
+	return (i);
+}
+
+char	*ft_search_name(int ind, t_room *room)
+{
+	while (room)
+	{
+		if (ind == room->ind)
+			return (room->name);
+		room = room->next;
+	}
+	return (NULL);
+}
+
+void	ft_exit(char **str)
+{
+	ft_strdel(str);
+	exit(1);
 }

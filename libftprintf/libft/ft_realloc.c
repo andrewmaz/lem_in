@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char		*ft_realloc(char *str, int size)
+char		*ft_realloc(char *str, size_t size)
 {
 	char *nstr;
 

@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-t_room *ft_add_room(t_room *room)
+t_room	*ft_add_room(t_room *room)
 {
 	int		i;
 	t_room	*head;

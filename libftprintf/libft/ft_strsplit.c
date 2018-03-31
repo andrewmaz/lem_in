@@ -6,13 +6,13 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 19:50:47 by amazurok          #+#    #+#             */
-/*   Updated: 2018/03/28 14:20:53 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/03/31 18:00:14 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_num_word(const char *s, char c)
+int			ft_num_word(const char *s, char c)
 {
 	int i;
 	int res;
@@ -28,7 +28,7 @@ int	ft_num_word(const char *s, char c)
 	return (res);
 }
 
-int	ft_len_word(const char *s, char c)
+int			ft_len_word(const char *s, char c)
 {
 	int i;
 
