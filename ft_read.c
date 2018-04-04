@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 10:55:29 by amazurok          #+#    #+#             */
-/*   Updated: 2018/03/31 17:35:47 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/03 15:27:54 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,10 @@ void		*ft_read_connection(t_room *room, int **map, size_t size, char *str)
 	j = ft_search_ind(tmp[1], room);
 	ft_del_dstr(tmp);
 	if (i >= 0 && j >= 0)
+	{
 		map[i][j] = 1;
+		map[j][i] = 1;
+	}
 	else
 		return (ft_read_conn_err(room, map, size, str));
 	return ((void*)1);

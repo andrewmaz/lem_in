@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 15:30:57 by amazurok          #+#    #+#             */
-/*   Updated: 2018/03/31 17:56:13 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/01 13:52:38 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 # include <stdio.h>
 # include "libftprintf/libft/libft.h"
 # include <stdio.h>
+
+typedef struct	s_road
+{
+  int	*ind;
+  int	s_ind;
+  int	len;
+  struct s_road *next;
+}				t_road;
+
 
 typedef struct	s_room
 {
@@ -31,8 +40,10 @@ typedef struct	s_room
 }				t_room;
 
 t_room			*ft_new_room(void);
-int				**ft_new_map(size_t	size);
+t_road			*ft_new_road(void);
+int				**ft_new_map(size_t	size, int n);
 t_room			*ft_add_room(t_room *room);
+t_road			*ft_add_road(t_road *road);
 void			ft_read_all(t_room **room, int ***map, char **input, int fd);
 size_t			ft_read_ants(int fd, char **input);
 t_room			*ft_read_rooms(char *str, t_room *room, int s_e);
@@ -61,5 +72,6 @@ char			*ft_search_name(int ind, t_room *room);
 int				ft_search_ind(char *name, t_room *room);
 void			ft_exit(char **str);
 char			*ft_realcat(char *input, char *str);
+int 			*ft_intrealloc(int *arr, int oldsize);
 
 #endif

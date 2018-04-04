@@ -12,6 +12,27 @@
 
 #include "lem_in.h"
 
+int 	*ft_intrealloc(int *arr, int oldsize)
+{
+	int *new;
+	int i;
+
+	i = 0;
+	new = (int*)malloc(sizeof(int) * oldsize + 1);
+	//while (i < oldsize + 1)
+	//	arr[i++] = 0;
+	if (arr)
+	{
+		while (i < oldsize)
+		{
+			new[i] = arr[i];
+			i++;
+		}
+		free(arr);
+	}
+	return (new);
+}
+
 size_t	ft_room_count(t_room *room)
 {
 	size_t	i;

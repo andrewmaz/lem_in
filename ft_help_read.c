@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 17:08:34 by amazurok          #+#    #+#             */
-/*   Updated: 2018/03/31 18:00:59 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/01 12:43:59 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		**ft_map(t_room *room, int **map, size_t *c_room, char *str)
 	if (!map)
 	{
 		*c_room = ft_room_count(room);
-		map = ft_new_map(*c_room);
+		map = ft_new_map(*c_room, 0);
 	}
 	if (!ft_read_connection(room, map, *c_room, str))
 		exit(1);

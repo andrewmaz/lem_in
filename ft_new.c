@@ -27,7 +27,7 @@ t_room		*ft_new_room(void)
 	return (room);
 }
 
-int			**ft_new_map(size_t size)
+int			**ft_new_map(size_t size, int n)
 {
 	int **new;
 	int i;
@@ -40,8 +40,20 @@ int			**ft_new_map(size_t size)
 		j = 0;
 		new[i] = (int *)malloc(sizeof(int) * size);
 		while (j < size)
-			new[i][j++] = 0;
+			new[i][j++] = n;
 		i++;
 	}
 	return (new);
+}
+
+t_road		*ft_new_road(void)
+{
+	t_road *road;
+
+	road = (t_road*)malloc(sizeof(t_road));
+	road->ind = NULL;
+	road->s_ind = 0;
+	road->len = 0;
+	road->next = 0;
+	return (road);
 }
