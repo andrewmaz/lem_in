@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 10:55:29 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/03 15:27:54 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/11 13:21:40 by jdoeurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,27 @@ size_t		ft_read_ants(int fd, char **input)
 	size_t	ants;
 	char	*str;
 
-	get_next_line(fd, &str);
-	if (!ft_is_number(str, 0))
-		ft_read_ant_err(str);
-	ants = (size_t)ft_atoi(str);
-	ants > 4294967295 ? ft_read_ant_err(str) : 0;
-	*input = ft_strjoin(str, "\n");
+	while (get_next_line(fd, &str))
+		if (str[0] != '#')
+			break ;
+		else
+		{
+			ants = (size_t)(ft_sharp(str, -1)) + 10;
+			if (ants >= 10 || ants == 8)
+			{
+				ants >= 10 ? ft_st_en_err(NULL, NULL, 0, str) : \
+					ft_read_line_err(NULL, NULL, 0, str);
+				ft_exit(input);
+			}
+			else
+				*input = ft_realcatendl(*input, str);
+			ft_strdel(&str);
+		}
+	!ft_is_number(str, 0) ? ft_read_ant_err(str) : 0;
+	(ants = (size_t)ft_atoi(str)) > 4294967295 ? ft_read_ant_err(str) : 0;
+	*input = ft_realcatendl(*input, str);
 	ft_strdel(&str);
-	return (ants);
+	return ((size_t)ants);
 }
 
 t_room		*ft_read_rooms(char *str, t_room *room, int s_e)
@@ -108,13 +121,14 @@ void		ft_read_all(t_room **room, int ***map, char **input, int fd)
 		}
 		else
 		{
-			if ((s_e = ft_sharp(str)) == -2)
+			if ((s_e = ft_sharp(str, s_e)) <= -2)
 			{
-				ft_read_line_err(*room, *map, (size_t)c_room, str);
+				s_e == -2 ? ft_read_line_err(*room, *map, (size_t)c_room, str) \
+					: ft_st_en_err(*room, *map, (size_t)c_room, str);
 				ft_exit(input);
 			}
 		}
-		*input = ft_realcat(*input, str);
+		*input = ft_realcatendl(*input, str);
 		ft_strdel(&str);
 	}
 }

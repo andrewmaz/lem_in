@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_func.c                                      :+:      :+:    :+:   */
+/*   ft_addit_func.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 15:46:18 by amazurok          #+#    #+#             */
-/*   Updated: 2018/03/31 17:10:13 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/11 12:43:18 by jdoeurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int 	*ft_intrealloc(int *arr, int oldsize)
 
 	i = 0;
 	new = (int*)malloc(sizeof(int) * oldsize + 1);
-	//while (i < oldsize + 1)
-	//	arr[i++] = 0;
 	if (arr)
 	{
 		while (i < oldsize)
@@ -31,6 +29,14 @@ int 	*ft_intrealloc(int *arr, int oldsize)
 		free(arr);
 	}
 	return (new);
+}
+
+char	*ft_realcatendl(char *input, char *str)
+{
+	input = ft_realloc(input, (ft_strlen(input) + ft_strlen(str) + 1));
+	input = ft_strcat(input, str);
+	input = ft_strcat(input, "\n");
+	return (input);
 }
 
 size_t	ft_room_count(t_room *room)
@@ -74,5 +80,6 @@ char	*ft_search_name(int ind, t_room *room)
 void	ft_exit(char **str)
 {
 	ft_strdel(str);
+	system("leaks lem_in_f");
 	exit(1);
 }

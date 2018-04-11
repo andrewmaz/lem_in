@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 17:08:34 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/01 12:43:59 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/11 12:53:29 by jdoeurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		**ft_map(t_room *room, int **map, size_t *c_room, char *str)
 	return (map);
 }
 
-int		ft_sharp(char *str)
+int		ft_sharp(char *str, int s)
 {
 	int s_e;
 
@@ -48,7 +48,8 @@ int		ft_sharp(char *str)
 		s_e = -1;
 	else
 		s_e = -2;
-	return (s_e);
+
+	return (s != -1 ? -3 : s_e);
 }
 
 ssize_t	ft_non_sharp(t_room **room, int ***map, int *s_e, char *str)
@@ -67,13 +68,8 @@ ssize_t	ft_non_sharp(t_room **room, int ***map, int *s_e, char *str)
 						ft_read_line_err(*room, *map, c_room, str);
 		return (0);
 	}
+	*s_e = -1;
 	return (1);
 }
 
-char	*ft_realcat(char *input, char *str)
-{
-	input = ft_realloc(input, (ft_strlen(input) + ft_strlen(str) + 1));
-	input = ft_strcat(input, str);
-	input = ft_strcat(input, "\n");
-	return (input);
-}
+

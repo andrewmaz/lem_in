@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 15:30:57 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/01 13:52:38 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/11 12:38:41 by jdoeurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ int				ft_is_number(char *nbr, int sig);
 int				ft_is_int(ssize_t nbr);
 
 ssize_t			ft_non_sharp(t_room **room, int ***map, int *s_e, char *str);
-int				ft_sharp(char *str);
+int				ft_sharp(char *str, int s_e);
 t_room			*ft_rooms(t_room *room, char *str, int *s_e);
 
 size_t			ft_room_count(t_room *room);
 char			*ft_search_name(int ind, t_room *room);
 int				ft_search_ind(char *name, t_room *room);
 void			ft_exit(char **str);
-char			*ft_realcat(char *input, char *str);
+char			*ft_realcatendl(char *input, char *str);
 int 			*ft_intrealloc(int *arr, int oldsize);
 
 #endif
