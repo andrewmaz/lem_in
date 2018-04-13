@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 15:39:15 by amazurok          #+#    #+#             */
-/*   Updated: 2018/03/31 17:13:53 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/13 15:09:22 by jdoeurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_road		*ft_new_road(void)
 
 	road = (t_road*)malloc(sizeof(t_road));
 	road->ind = NULL;
-	road->s_ind = 0;
+	road->ant_num = 0;
 	road->len = 0;
 	road->next = 0;
 	return (road);

@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 15:30:57 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/11 12:38:41 by jdoeurok         ###   ########.fr       */
+/*   Updated: 2018/04/13 16:31:34 by jdoeurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 typedef struct	s_road
 {
+  int	ant_num;
   int	*ind;
-  int	s_ind;
   int	len;
   struct s_road *next;
 }				t_road;
@@ -35,7 +35,7 @@ typedef struct	s_room
 	int				st_en;
 	ssize_t			x;
 	ssize_t			y;
-	int				ant;
+	size_t			ant;
 	struct s_room	*next;
 }				t_room;
 
@@ -51,7 +51,7 @@ void			*ft_read_connection(t_room *room, int **map, size_t siz, \
 					char *str);
 void			ft_del_dstr(char **dstr);
 void			ft_del_room(t_room *room);
-void			ft_del_map(int **map, size_t size);
+void			ft_del_map(void **map, size_t size);
 void			ft_del_all(t_room *room, int **map, size_t size, char *str);
 void			ft_read_ant_err(char *str);
 void			*ft_read_room_err(t_room *room, char **str, char *s);
@@ -73,5 +73,7 @@ int				ft_search_ind(char *name, t_room *room);
 void			ft_exit(char **str);
 char			*ft_realcatendl(char *input, char *str);
 int 			*ft_intrealloc(int *arr, int oldsize);
+void	ft_set_ants2st(t_room *room, size_t ants);
+char	*ft_realcat(char *input, char *str);
 
 #endif

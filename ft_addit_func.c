@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 15:46:18 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/11 12:43:18 by jdoeurok         ###   ########.fr       */
+/*   Updated: 2018/04/13 17:50:54 by jdoeurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ int 	*ft_intrealloc(int *arr, int oldsize)
 		free(arr);
 	}
 	return (new);
+}
+
+char	*ft_realcat(char *input, char *str)
+{
+	input = ft_realloc(input, (ft_strlen(input) + ft_strlen(str)));
+	input = ft_strcat(input, str);
+	return (input);
 }
 
 char	*ft_realcatendl(char *input, char *str)
