@@ -34,7 +34,7 @@ size_t		ft_read_ants(int fd, char **input)
 			ft_strdel(&str);
 		}
 	!ft_is_number(str, 0) ? ft_read_ant_err(str) : 0;
-	(ants = (size_t)ft_atoi(str)) > 4294967295 ? ft_read_ant_err(str) : 0;
+	(ants = (size_t)ft_atoi(str)) > 4294967295 || !ants ? ft_read_ant_err(str) : 0;
 	*input = ft_realcatendl(*input, str);
 	ft_strdel(&str);
 	return ((size_t)ants);

@@ -12,6 +12,20 @@
 
 #include "lem_in.h"
 
+void	ft_del_road(t_road *road)
+{
+	t_road *tmp;
+
+	while (road)
+	{
+		tmp = road->next;
+		ft_del_room(road->room);
+		free(road->road);
+		free(road);
+		road = tmp;
+	}
+}
+
 void	ft_del_dstr(char **dstr)
 {
 	int i;
@@ -22,7 +36,7 @@ void	ft_del_dstr(char **dstr)
 	free(dstr);
 }
 
-void	ft_del_map(void **map, size_t size)
+void	ft_del_map(int **map, size_t size)
 {
 	int i;
 

@@ -40,3 +40,21 @@ int			ft_is_number(char *nbr, int sig)
 	}
 	return (1);
 }
+
+size_t ft_in_finish(t_road *road)
+{
+	size_t ret;
+	t_room *tmp;
+
+	ret = 0;
+	while (road)
+	{
+		if (!(tmp = road->room))
+			break;
+		while (tmp->next)
+			tmp = tmp->next;
+		ret += tmp->ant;
+		road = road->next;
+	}
+	return (ret);
+}

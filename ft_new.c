@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 15:39:15 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/13 15:09:22 by jdoeurok         ###   ########.fr       */
+/*   Updated: 2018/04/19 15:32:40 by jdoeurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ t_room		*ft_new_room(void)
 	room = (t_room*)malloc(sizeof(t_room));
 	room->name = NULL;
 	room->ant = 0;
+	room->antn = 0;
 	room->ind = 0;
 	room->st_en = -1;
 	room->x = 0;
 	room->y = 0;
 	room->next = NULL;
+	room->prev = NULL;
 	return (room);
 }
 
@@ -51,9 +53,12 @@ t_road		*ft_new_road(void)
 	t_road *road;
 
 	road = (t_road*)malloc(sizeof(t_road));
-	road->ind = NULL;
+	road->road = NULL;
+	road->room = NULL;
 	road->ant_num = 0;
 	road->len = 0;
-	road->next = 0;
+	road->room = NULL;
+	road->next = NULL;
+	road->prev = NULL;
 	return (road);
 }

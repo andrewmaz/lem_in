@@ -59,31 +59,6 @@ size_t	ft_room_count(t_room *room)
 	return (i);
 }
 
-int		ft_search_ind(char *name, t_room *room)
-{
-	int i;
-
-	i = -1;
-	while (room)
-	{
-		if (ft_strequ(name, room->name))
-			i = room->ind;
-		room = room->next;
-	}
-	return (i);
-}
-
-char	*ft_search_name(int ind, t_room *room)
-{
-	while (room)
-	{
-		if (ind == room->ind)
-			return (room->name);
-		room = room->next;
-	}
-	return (NULL);
-}
-
 void	ft_exit(char **str)
 {
 	ft_strdel(str);

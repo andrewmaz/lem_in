@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_room.c                                      :+:      :+:    :+:   */
+/*   ft_valid_link.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/28 14:42:40 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/01 13:20:48 by amazurok         ###   ########.fr       */
+/*   Created: 2018/04/23 16:47:37 by amazurok          #+#    #+#             */
+/*   Updated: 2018/04/23 16:47:37 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_room		*ft_add_room(t_room *room)
+int ft_valid_nmap(int s, int e, int **map, size_t n)
 {
-	int		i;
-	t_room	*head;
+	int j;
+	int vs;
+	int ve;
 
-	i = 0;
-	if (!room)
+	vs = 0;
+	ve = 0;
+	j = 0;
+	while (j < n)
 	{
-		room = ft_new_room();
-		return (room);
+		if (map[s][j] > -1)
+			vs = 1;
+		if (map[e][j] > -1)
+			ve = 1;
+		j++;
 	}
-	head = room;
-	while (room->next)
-	{
-		i++;
-		room = room->next;
-	}
-	room->next = ft_new_room();
-	room->next->ind = ++i;
-	return (head);
+	return (vs && ve);
 }
