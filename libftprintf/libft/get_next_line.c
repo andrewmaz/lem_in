@@ -93,7 +93,7 @@ int				get_next_line(const int fd, char **line)
 	qwe = ft_add2list(&head, (size_t)fd);
 	if (ft_add2line(qwe, line))
 		return (1);
-	while ((ret = read(fd, buf, BUFF_SIZE)))
+	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		buf[ret] = '\0';
 		size += ret;

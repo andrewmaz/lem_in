@@ -6,7 +6,7 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:29:31 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/23 16:44:32 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/24 16:08:25 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static void	ft_set_ants(t_road *road, size_t ants)
 		len = (road && road->prev) ? road->len - road->prev->len : 0;
 		while (road && road->prev && ants > 0)
 		{
-			if (road->ant_num + len < road->prev->ant_num)
+			if (road->ant_num + len <= road->prev->ant_num)
 			{
 				road->ant_num++;
 				ants--;
@@ -113,16 +113,22 @@ static void	ft_set_ants(t_road *road, size_t ants)
 	}
 }
 
-void ft_output(size_t ants, t_road *road, t_room *room)
+void ft_output(size_t *ant_room_fd, t_room *room, int **map, char *input)
 {
-	int i;
-	int j;
+	t_road	*road;
+	int		i;
+	int		j;
 
 	i = 1;
 	j = 1;
-	ft_set_ants(road, ants);
+	map = ft_lee_algor(ft_search_st_en(room, 0), map, ant_room_fd[1]);
+	ft_valid_link(room, map, ant_room_fd, input);
+	road = ft_read_road(room, map, ant_room_fd);
+	ft_set_ants(road, ant_room_fd[0]);
 	ft_create_road(road, room);
 	ft_putstr("\n");
 	while (i)
-		i = ft_go(ants, road, &j);
+		i = ft_go(ant_room_fd[0], road, &j);
+	ft_del_road(road);
+	ft_del_all(room, map, ant_room_fd[1], input);
 }

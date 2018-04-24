@@ -36,8 +36,8 @@ t_room		*ft_search_room(int ind, t_room *room)
 
 static void ft_help_road(int i, int **map, t_road *road, size_t n)
 {
-	int j;
-	int k;
+	size_t j;
+	size_t k;
 
 	j = 0;
 	while (map[i][j] != 0 && j < n)

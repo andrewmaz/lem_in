@@ -24,7 +24,6 @@ void ft_create_road(t_road *road, t_room *room)
 {
 	t_room *head;
 	int i;
-	t_room *fin;
 
 	while (road)
 	{

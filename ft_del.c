@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_del.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 10:57:50 by amazurok          #+#    #+#             */
-/*   Updated: 2018/03/31 15:08:28 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/04/24 14:19:39 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_del_dstr(char **dstr)
 
 void	ft_del_map(int **map, size_t size)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	if (!map)

@@ -14,8 +14,8 @@
 
 static void	ft_mod(int **map, int **nmap, size_t n)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	while (i < n)
@@ -37,8 +37,8 @@ static void	ft_mod(int **map, int **nmap, size_t n)
 int			**ft_lee_algor(int s, int **map, size_t n)
 {
 	int **nmap;
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	nmap = ft_new_map(n, -1);
 	i = s;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 10:55:29 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/11 13:21:40 by jdoeurok         ###   ########.fr       */
+/*   Updated: 2018/04/24 16:53:48 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ size_t		ft_read_ants(int fd, char **input)
 	char	*str;
 
 	while (get_next_line(fd, &str))
-		if (str[0] != '#')
+		if (!str || str[0] != '#')
 			break ;
 		else
 		{
 			ants = (size_t)(ft_sharp(str, -1)) + 10;
 			if (ants >= 10 || ants == 8)
 			{
-				ants >= 10 ? ft_st_en_err(NULL, NULL, 0, str) : \
+				ants >= 10 ? ft_noants_err(&str) : \
 					ft_read_line_err(NULL, NULL, 0, str);
 				ft_exit(input);
 			}
@@ -33,6 +33,7 @@ size_t		ft_read_ants(int fd, char **input)
 				*input = ft_realcatendl(*input, str);
 			ft_strdel(&str);
 		}
+	!str || !str[0] ? ft_emptyfile_err(input) : 0;
 	!ft_is_number(str, 0) ? ft_read_ant_err(str) : 0;
 	(ants = (size_t)ft_atoi(str)) > 4294967295 || !ants ? ft_read_ant_err(str) : 0;
 	*input = ft_realcatendl(*input, str);
@@ -131,4 +132,6 @@ void		ft_read_all(t_room **room, int ***map, char **input, int fd)
 		*input = ft_realcatendl(*input, str);
 		ft_strdel(&str);
 	}
+	!*room ? ft_noroom_err(input) : 0;
+	!*map ? ft_nolinks_err(input) : 0;
 }

@@ -18,7 +18,7 @@ int 	*ft_intrealloc(int *arr, int oldsize)
 	int i;
 
 	i = 0;
-	new = (int*)malloc(sizeof(int) * oldsize + 1);
+	new = (int*)malloc(sizeof(int) * (oldsize + 1));
 	if (arr)
 	{
 		while (i < oldsize)
@@ -62,6 +62,5 @@ size_t	ft_room_count(t_room *room)
 void	ft_exit(char **str)
 {
 	ft_strdel(str);
-	system("leaks lem_in_f");
 	exit(1);
 }

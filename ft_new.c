@@ -32,8 +32,8 @@ t_room		*ft_new_room(void)
 int			**ft_new_map(size_t size, int n)
 {
 	int **new;
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	new = (int **)malloc(sizeof(int*) * size);
@@ -61,4 +61,19 @@ t_road		*ft_new_road(void)
 	road->next = NULL;
 	road->prev = NULL;
 	return (road);
+}
+
+t_flag	*ft_new_flag(void)
+{
+	t_flag *key;
+
+	key = (t_flag*)malloc(sizeof(t_flag));
+	key->c = 0;
+	key->n = 0;
+	key->v = 0;
+	key->h = 0;
+	key->f = 0;
+	key->k = 0;
+	key->filename = NULL;
+	return (key);
 }
