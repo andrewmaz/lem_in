@@ -6,7 +6,7 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 15:43:10 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/24 15:34:07 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/01 14:20:48 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int			ft_is_number(char *nbr, int sig)
 	{
 		if (nbr[i] == '+' || nbr[i] == '-')
 			i++;
+		if (!nbr[i])
+			return (0);
 		while (nbr[i])
 			if (!ft_isdigit(nbr[i++]))
 				return (0);
@@ -43,7 +45,7 @@ int			ft_is_number(char *nbr, int sig)
 	return (1);
 }
 
-size_t ft_in_finish(t_road *road)
+size_t		ft_in_finish(t_road *road)
 {
 	size_t ret;
 	t_room *tmp;
@@ -52,7 +54,7 @@ size_t ft_in_finish(t_road *road)
 	while (road)
 	{
 		if (!(tmp = road->room))
-			break;
+			break ;
 		while (tmp->next)
 			tmp = tmp->next;
 		ret += tmp->ant;

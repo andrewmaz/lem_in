@@ -15,12 +15,13 @@ r_end 9 5
 r_end-r_6
 r_end-r_7
 r_start-r_2
+r_2-r_end
+4
 r_5-r_2
 r_6-r_1
 r_2-r_6
 r_5-r_1
 r_1-r_start
-d d d
 r_8-r_7
 r_8-r_1
 r_8-r_5

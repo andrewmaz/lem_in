@@ -6,7 +6,7 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:41:04 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/24 11:34:54 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/01 14:21:20 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_swap_int(int *a, int *b)
 		*b = c;
 	}
 	else
-		return;
+		return ;
 }
 
 int		ft_min(int a, int b)
@@ -36,24 +36,6 @@ int		ft_min(int a, int b)
 		return (a);
 	else
 		return (b);
-}
-
-void	ft_len(int s, int **nmap, int **map, size_t size)
-{
-
-	size_t i;
-	size_t j;
-
-	i = s;
-	j = 0;
-	while (j < size)
-	{
-		if (map[i][j])
-		{
-			nmap[j][j] = ft_min(nmap[s][s] + 1, nmap[j][j]);
-		}
-		j++;
-	}
 }
 
 int		*ft_revers(int *in, int size)
@@ -72,7 +54,7 @@ int		*ft_revers(int *in, int size)
 int		ft_min_len(int i, int **map, size_t n)
 {
 	size_t	j;
-	int 	res;
+	int		res;
 
 	j = 0;
 	res = map[i][j];

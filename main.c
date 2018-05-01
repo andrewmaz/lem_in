@@ -6,16 +6,23 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 15:27:29 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/24 16:36:27 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/01 12:27:29 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 #include <fcntl.h>
 
-size_t ft_read_fd()
+size_t ft_read_fd(t_flag *flag)
 {
-	return(0);
+	int	fd;
+
+	if ((fd = open(flag->filename, O_RDONLY)))
+		return ((size_t)fd);
+	perror("Error!");
+	free(flag);
+	system("leaks lem_in_f");
+	exit(1);
 }
 
 int main(int argc, char *argv[])
@@ -36,11 +43,12 @@ int main(int argc, char *argv[])
 		free(flag);
 		return (0);
 	}
-	ant_room_fd[2] = flag->f ? (size_t)open(flag->filename, O_RDONLY) : 0;
+	ant_room_fd[2] = flag->f ? ft_read_fd(flag) : 0;
 	ant_room_fd[0] = ft_read_ants((int)ant_room_fd[2], &input);
 	ft_read_all(&room, &map, &input, (int)ant_room_fd[2]);
 	ant_room_fd[1] = ft_room_count(room);
 	ft_output(ant_room_fd, room, map, input);
+	free(flag);
 	//system("leaks lem_in_f");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 15:39:15 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/19 15:32:40 by jdoeurok         ###   ########.fr       */
+/*   Updated: 2018/05/01 14:22:07 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ t_room		*ft_new_room(void)
 
 int			**ft_new_map(size_t size, int n)
 {
-	int **new;
-	size_t i;
-	size_t j;
+	int		**new;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	new = (int **)malloc(sizeof(int*) * size);
@@ -63,7 +63,7 @@ t_road		*ft_new_road(void)
 	return (road);
 }
 
-t_flag	*ft_new_flag(void)
+t_flag		*ft_new_flag(void)
 {
 	t_flag *key;
 

@@ -34,7 +34,7 @@ int		ft_set_key(t_flag *flag, int i, char **v)
 		free(flag);
 		errno = 22;
 		perror("Unknown key!");
-		exit(1);
+		ft_exit(NULL);
 	}
 	return (i);
 }
@@ -55,7 +55,7 @@ t_flag	*ft_read_flag(int c, char **v)
 			free(flag);
 			errno = 22;
 			perror("Unknown key!");
-			exit(1);
+			ft_exit(NULL);
 		}
 		i++;
 	}

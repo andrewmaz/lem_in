@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 13:20:12 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/01 12:48:49 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/01 13:37:29 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ void		ft_read_ant_err(char *str)
 	exit(1);
 }
 
-void		*ft_read_room_err(t_room *room, char **str, char *s)
+void		*ft_read_room_err(t_room *room, char **str, char *s, int r_c)
 {
 	errno = 5;
 	ft_strdel(&s);
 	ft_del_room(room);
 	str ? ft_del_dstr(str) : 0;
-	perror("The rooms coordinates will always be integers!");
+	r_c ? perror("The rooms coordinates will always be integers!") : \
+		perror("The rooms name/coordinates already exist!");
 	return (NULL);
 }
 

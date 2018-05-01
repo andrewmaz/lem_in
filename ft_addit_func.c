@@ -6,13 +6,13 @@
 /*   By: amazurok <amazurok@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 15:46:18 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/13 17:50:54 by jdoeurok         ###   ########.fr       */
+/*   Updated: 2018/05/01 14:20:09 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int 	*ft_intrealloc(int *arr, int oldsize)
+int		*ft_intrealloc(int *arr, int oldsize)
 {
 	int *new;
 	int i;
@@ -57,10 +57,4 @@ size_t	ft_room_count(t_room *room)
 		room = room->next;
 	}
 	return (i);
-}
-
-void	ft_exit(char **str)
-{
-	ft_strdel(str);
-	exit(1);
 }

@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error3.c                                        :+:      :+:    :+:   */
+/*   ft_del2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/24 17:24:35 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/24 17:27:25 by amazurok         ###   ########.fr       */
+/*   Created: 2018/04/27 13:58:49 by amazurok          #+#    #+#             */
+/*   Updated: 2018/05/01 14:12:36 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int			ft_link_err(t_room *room, int **map, size_t size, char *str)
+void	ft_del_last_road(t_road **road)
 {
-	errno = 5;
-	ft_del_all(room, map, size, str);
-	perror("Doesn't valid link!");
-	exit(1);
+	t_road *tmp;
+
+	tmp = *road;
+	if (tmp->next)
+	{
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->prev->next = NULL;
+		ft_del_road(tmp);
+		return ;
+	}
+	else
+		ft_del_road(*road);
+	*road = NULL;
 }

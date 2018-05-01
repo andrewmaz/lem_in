@@ -6,24 +6,23 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:08:44 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/23 16:26:14 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/01 14:25:02 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-
-void ft_copy_lst(t_room *new, t_room *old)
+void	ft_copy_lst(t_room *new, t_room *old)
 {
 	new->name = ft_strdup(old->name);
 	new->ind = old->ind;
 	new->st_en = old->st_en;
 }
 
-void ft_create_road(t_road *road, t_room *room)
+void	ft_create_road(t_road *road, t_room *room)
 {
-	t_room *head;
-	int i;
+	t_room	*head;
+	int		i;
 
 	while (road)
 	{

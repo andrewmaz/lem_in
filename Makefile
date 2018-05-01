@@ -14,7 +14,8 @@ NAME = lem-in
 
 SRC = ft_add.c ft_addit_func.c ft_del.c ft_errors.c ft_help.c ft_int_operat.c \
 		ft_is_in.c ft_lee_algor.c ft_new.c ft_output.c ft_read.c ft_read2.c \
-		ft_read_flag.c ft_road.c ft_search.c ft_valid_link.c main.c
+		ft_read_flag.c ft_road.c ft_search.c ft_valid.c main.c ft_errors2.c \
+		ft_del2.c
 
 OSRC = $(patsubst %.c, %.o, $(SRC))
 
