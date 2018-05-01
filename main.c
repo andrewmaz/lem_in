@@ -13,7 +13,7 @@
 #include "lem_in.h"
 #include <fcntl.h>
 
-size_t ft_read_fd(t_flag *flag)
+size_t ft_read_fd(t_fflag *flag)
 {
 	int	fd;
 
@@ -27,8 +27,7 @@ size_t ft_read_fd(t_flag *flag)
 
 int main(int argc, char *argv[])
 {
-	size_t	ant_room_fd[3];
-	t_flag	*flag;
+	t_fflag	*flag;
 	t_room	*room;
 	int		**map;
 	char	*input;
@@ -43,11 +42,11 @@ int main(int argc, char *argv[])
 		free(flag);
 		return (0);
 	}
-	ant_room_fd[2] = flag->f ? ft_read_fd(flag) : 0;
-	ant_room_fd[0] = ft_read_ants((int)ant_room_fd[2], &input);
-	ft_read_all(&room, &map, &input, (int)ant_room_fd[2]);
-	ant_room_fd[1] = ft_room_count(room);
-	ft_output(ant_room_fd, room, map, input);
+	flag->ant_room_fd[2] = flag->f ? ft_read_fd(flag) : 0;
+	flag->ant_room_fd[0] = ft_read_ants((int)flag->ant_room_fd[2], &input);
+	ft_read_all(&room, &map, &input, (int)flag->ant_room_fd[2]);
+	flag->ant_room_fd[1] = ft_room_count(room);
+	ft_output(flag, room, map, input);
 	free(flag);
 	//system("leaks lem_in_f");
 	return (0);

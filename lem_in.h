@@ -13,8 +13,6 @@
 #ifndef LEM_IN_H
 # define LEM_IN_H
 
-//# define UINT_MAX 4294967295
-
 # include <stdlib.h>
 # include <errno.h>
 # include <stdio.h>
@@ -45,27 +43,28 @@ typedef struct	s_road
   struct s_road *prev;
 }				t_road;
 
-typedef struct	s_flag
+typedef struct	s_fflag
 {
-  int		v;
+  size_t	ant_room_fd[3];
   int		c;
   int		n;
   int		h;
   int		f;
-  int		k;
+  int		r;
   char	*filename;
-}				t_flag;
+}				t_fflag;
 
 t_room			*ft_new_room(void);
 t_road			*ft_new_road(void);
 int				**ft_new_map(size_t	size, int n);
+t_fflag			*ft_new_fflag(void);
 t_room			*ft_add_room(t_room *room);
 void			ft_read_all(t_room **room, int ***map, char **input, int fd);
 size_t			ft_read_ants(int fd, char **input);
 t_room			*ft_read_rooms(char *str, t_room *room, int s_e);
 void			*ft_read_connection(t_room *room, int **map, size_t siz, \
 					char *str);
-t_flag			*ft_read_flag(int c, char **v);
+t_fflag			*ft_read_flag(int c, char **v);
 void			ft_del_road(t_road *road);
 void	ft_del_last_road(t_road **road);
 void			ft_del_dstr(char **dstr);
@@ -94,7 +93,7 @@ ssize_t			ft_non_sharp(t_room **room, int ***map, int *s_e, char *str);
 int				ft_sharp(char *str, int s_e);
 t_room			*ft_rooms(t_room *room, char *str, int *s_e);
 void 			ft_create_road(t_road *road, t_room *room);
-void 			ft_output(size_t *ant_room_fd, t_room *room, int **map, char *input);
+void 			ft_output(t_fflag *flag, t_room *room, int **map, char *input);
 void			ft_valid_link(t_room *room, int **map, size_t *ant_room_fd, char *input);
 int				ft_valid_room(char **tmp, t_room *room);
 
@@ -106,10 +105,8 @@ int 			*ft_intrealloc(int *arr, int oldsize);
 char			*ft_realcat(char *input, char *str);
 int 			ft_min_len(int i, int **map, size_t n);
 int				*ft_revers(int *in, int size);
-//void			ft_len(size_t s, int **nmap, int **map, size_t size);
 int				**ft_lee_algor(int s, int **map, size_t n);
 void			ft_help(void);
-t_flag			*ft_new_flag(void);
 int				ft_min(int a, int b);
 
 #endif

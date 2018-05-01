@@ -16,14 +16,10 @@ void	ft_help(void)
 {
 	ft_printf("________________HELP_________________\n");
 	ft_printf("| %-14s %-19s|\n", "-h", "<help>");
-	ft_printf("| %-14s %-19s|\n", "-v", "<visualization>");
-	ft_printf("| %-14s %-19s|\n", "-n", "<number of command>");
-	ft_printf("| %-14s %-19s|\n", "-k", "<print command>");
+	//ft_printf("| %-14s %-19s|\n", "-v", "<visualization>");
+	ft_printf("| %-14s %-19s|\n", "-n", "<number of iteration>");
+	ft_printf("| %-14s %-19s|\n", "-r", "<print road>");
 	ft_printf("| %-14s %-19s|\n", "-f [file name]", "<input from file>");
-	ft_printf("| %-14s %-19s|\n", "-c", "<colour of command>");
-	ft_printf("| %-14s {green}%-19s{eoc}|\n", "", "<push>");
-	ft_printf("| %-14s {blue}%-19s{eoc}|\n", "", "<swap>");
-	ft_printf("| %-14s {cyan}%-19s{eoc}|\n", "", "<rotate>");
-	ft_printf("| %-14s {yellow}%-19s{eoc}|\n", "", "<reverse rotate>");
+	ft_printf("| %-14s %-19s|\n", "-c", "<colour>");
 	ft_printf("|___________________________________|\n");
 }

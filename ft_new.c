@@ -63,17 +63,16 @@ t_road		*ft_new_road(void)
 	return (road);
 }
 
-t_flag		*ft_new_flag(void)
+t_fflag		*ft_new_fflag(void)
 {
-	t_flag *key;
+	t_fflag *key;
 
-	key = (t_flag*)malloc(sizeof(t_flag));
+	key = (t_fflag*)malloc(sizeof(t_fflag));
 	key->c = 0;
 	key->n = 0;
-	key->v = 0;
 	key->h = 0;
 	key->f = 0;
-	key->k = 0;
+	key->r = 0;
 	key->filename = NULL;
 	return (key);
 }

@@ -12,18 +12,18 @@
 
 #include "lem_in.h"
 
-int		ft_set_key(t_flag *flag, int i, char **v)
+int		ft_set_key(t_fflag *flag, int i, char **v)
 {
 	if (v[i][1] == 'c')
 		flag->c = 1;
-	else if (v[i][1] == 'v')
-		flag->v = 1;
+	//else if (v[i][1] == 'v')
+	//	flag->v = 1;
 	else if (v[i][1] == 'n')
 		flag->n = 1;
 	else if (v[i][1] == 'h')
 		flag->h = 1;
-	else if (v[i][1] == 'k')
-		flag->k = 1;
+	else if (v[i][1] == 'r')
+		flag->r = 1;
 	else if (v[i][1] == 'f')
 	{
 		flag->f = 1;
@@ -39,12 +39,12 @@ int		ft_set_key(t_flag *flag, int i, char **v)
 	return (i);
 }
 
-t_flag	*ft_read_flag(int c, char **v)
+t_fflag	*ft_read_flag(int c, char **v)
 {
 	int		i;
-	t_flag	*flag;
+	t_fflag	*flag;
 
-	flag = ft_new_flag();
+	flag = ft_new_fflag();
 	i = 1;
 	while (i < c)
 	{

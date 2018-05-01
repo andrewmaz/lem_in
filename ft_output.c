@@ -173,27 +173,63 @@ static void	ft_set_ants(t_road *road, size_t ants)
 	}
 }
 
-void ft_output(size_t *ant_room_fd, t_room *room, int **map, char *input)
+void	ft_print_road(t_fflag *flag, t_road *road, t_room *room)
+{
+	char *s;
+	t_room *st;
+	t_room *ro;
+
+	st = ft_search_room(ft_search_st_en(room, 0), room);
+	s = st->name;
+	ft_printf("\n");
+	while (road)
+	{
+		ro = road->room;
+		flag->c ? ft_printf("{red}%s{eoc}->", s) : ft_printf("%s->", s);
+		while (ro)
+		{
+			flag->c && ro->st_en == 1 ? ft_printf("{green}%s{eoc}", ro->name) :\
+				ft_printf("%s%.*s", ro->name, ro->st_en == 1 ? 0 : 2, "->");
+			ro = ro->next;
+		}
+		ft_printf("\n");
+		road = road->next;
+	}
+}
+
+void	ft_print_bonus(int n, t_fflag *flag, t_road *road, t_room *room)
+{
+	if (flag->r)
+		ft_print_road(flag, road, room);
+	if (flag->n)
+		ft_printf("% iteration", n);
+}
+
+void ft_output(t_fflag *flag, t_room *room, int **map, char *input)
 {
 	t_road	*road;
 	int		i;
 	int		j;
+	int 	n;
 
 	i = 1;
 	j = 1;
-	ft_valid_link(room, map, ant_room_fd, input);
-	map = ft_lee_algor(ft_search_st_en(room, 0), map, ant_room_fd[1]);
-	ft_valid_link(room, map, ant_room_fd, input);
-	road = ft_read_road(room, map, ant_room_fd);
+	n = 0;
+	ft_valid_link(room, map, flag->ant_room_fd, input);
+	map = ft_lee_algor(ft_search_st_en(room, 0), map, flag->ant_room_fd[1]);
+	ft_valid_link(room, map, flag->ant_room_fd, input);
+	road = ft_read_road(room, map, flag->ant_room_fd);
 	!road ? ft_input_err(room, map, input, "No road") : 0;
 	ft_putstr(input);
-	ft_set_ants(road, ant_room_fd[0]);
+	ft_set_ants(road, flag->ant_room_fd[0]);
 	ft_create_road(road, room);
 	ft_putstr("\n");
 	while (i)
 	{
-		i = ft_go(ant_room_fd[0], road, &j);
+		i = ft_go(flag->ant_room_fd[0], road, &j);
+		n++;
 	}
+	ft_print_bonus(n, flag, road, room);
 	ft_del_road(road);
-	ft_del_all(room, map, ant_room_fd[1], input);
+	ft_del_all(room, map, flag->ant_room_fd[1], input);
 }
