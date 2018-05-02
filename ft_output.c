@@ -12,93 +12,6 @@
 
 #include "lem_in.h"
 
-static void	ft_swap_str(char **a, char **b)
-{
-	char *c;
-
-	if (a && b)
-	{
-		c = *a;
-		*a = *b;
-		*b = c;
-	}
-	else
-		return ;
-}
-
-static void	ft_bubl_sort(char **arr)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (arr && arr[i])
-	{
-		j = 0;
-		while (arr[j + 1])
-		{
-			if (ft_atoi(arr[j] + 1) > ft_atoi(arr[j + 1] + 1))
-				ft_swap_str(&arr[j], &arr[j + 1]);
-			j++;
-		}
-		i++;
-	}
-}
-
-char *ft_dstr2str(char **dstr)
-{
-	char	*res;
-	int 	i;
-
-	i = 0;
-	res = NULL;
-	while (dstr[i])
-	{
-		res = ft_realcat(res, dstr[i++]);
-		res = dstr[i] ? ft_realcat(res, " ") : res;
-	}
-	return (res);
-}
-
-void		ft_sort_res(char **res)
-{
-	char **new;
-
-	new = ft_strsplit(*res, ' ');
-	ft_bubl_sort(new);
-	ft_strdel(res);
-	*res = ft_dstr2str(new);
-	ft_del_dstr(new);
-}
-
-static void	ft_print(t_road *road, char *res, char *ito)
-{
-	while (road && road->room)
-	{
-		while (road->room->next)
-			road->room = road->room->next;
-		while (road->room)
-		{
-			if (road->room->ant && road->room->antn)
-			{
-				res = res ? ft_realcat(res, " ") : res;
-				res = ft_realcat(res, "L");
-				ito = ft_itoa(road->room->antn);
-				res = ft_realcat(res, ito);
-				ft_strdel(&ito);
-				res = ft_realcat(res, "-");
-				res = ft_realcat(res, road->room->name);
-			}
-			if (!road->room->prev)
-				break ;
-			road->room = road->room->prev;
-		}
-		road = road->next;
-	}
-	ft_sort_res(&res);
-	ft_putendl(res);
-	ft_strdel(&res);
-}
 
 static void	ft_help_go(t_road *road, int *n)
 {
@@ -127,12 +40,41 @@ static void	ft_help_go(t_road *road, int *n)
 	}
 }
 
-static int	ft_go(size_t ants, t_road *road, int *n)
+void	ft_creat_res(t_fflag *flag, t_road *road, char *res, char *e)
+{
+	char *ito;
+
+	while (road && road->room)
+	{
+		while (road->room->next)
+			road->room = road->room->next;
+		while (road->room)
+		{
+			if (road->room->ant && road->room->antn)
+			{
+				res = res ? ft_realcat(res, " ") : res;
+				res = ft_realcat(res, "L");
+				ito = ft_itoa(road->room->antn);
+				res = ft_realcat(res, ito);
+				ft_strdel(&ito);
+				res = ft_realcat(res, "-");
+				res = ft_realcat(res, road->room->name);
+			}
+			if (!road->room->prev)
+				break ;
+			road->room = road->room->prev;
+		}
+		road = road->next;
+	}
+	ft_print_result(flag, &res, e);
+}
+
+static int	ft_go(t_fflag *flag, t_road *road, int *n, char *e)
 {
 	t_road *head;
 
 	head = road;
-	if (ants == ft_in_finish(road))
+	if (flag->ant_room_fd[0] == ft_in_finish(road))
 		return (0);
 	while (road && road->room)
 	{
@@ -142,7 +84,7 @@ static int	ft_go(size_t ants, t_road *road, int *n)
 		ft_help_go(road, n);
 		road = road->next;
 	}
-	ft_print(head, NULL, NULL);
+	ft_creat_res(flag, head, NULL, e);
 	return (1);
 }
 
@@ -154,8 +96,8 @@ static void	ft_set_ants(t_road *road, size_t ants)
 			road = road->prev;
 		while (road && road->next && ants > 0)
 		{
-			if (road->len + road->ant_num + 1 <= \
-				road->next->len + road->next->ant_num)
+			if (road->len + road->ant_num + (road->len != road->next->len ? \
+			1 : 0) <= road->next->len + road->next->ant_num)
 			{
 				road->ant_num++;
 				ants--;
@@ -173,38 +115,6 @@ static void	ft_set_ants(t_road *road, size_t ants)
 	}
 }
 
-void	ft_print_road(t_fflag *flag, t_road *road, t_room *room)
-{
-	char *s;
-	t_room *st;
-	t_room *ro;
-
-	st = ft_search_room(ft_search_st_en(room, 0), room);
-	s = st->name;
-	ft_printf("\n");
-	while (road)
-	{
-		ro = road->room;
-		flag->c ? ft_printf("{red}%s{eoc}->", s) : ft_printf("%s->", s);
-		while (ro)
-		{
-			flag->c && ro->st_en == 1 ? ft_printf("{green}%s{eoc}", ro->name) :\
-				ft_printf("%s%.*s", ro->name, ro->st_en == 1 ? 0 : 2, "->");
-			ro = ro->next;
-		}
-		ft_printf("\n");
-		road = road->next;
-	}
-}
-
-void	ft_print_bonus(int n, t_fflag *flag, t_road *road, t_room *room)
-{
-	if (flag->r)
-		ft_print_road(flag, road, room);
-	if (flag->n)
-		ft_printf("% iteration", n);
-}
-
 void ft_output(t_fflag *flag, t_room *room, int **map, char *input)
 {
 	t_road	*road;
@@ -215,21 +125,19 @@ void ft_output(t_fflag *flag, t_room *room, int **map, char *input)
 	i = 1;
 	j = 1;
 	n = 0;
-	ft_valid_link(room, map, flag->ant_room_fd, input);
 	map = ft_lee_algor(ft_search_st_en(room, 0), map, flag->ant_room_fd[1]);
 	ft_valid_link(room, map, flag->ant_room_fd, input);
 	road = ft_read_road(room, map, flag->ant_room_fd);
 	!road ? ft_input_err(room, map, input, "No road") : 0;
-	ft_putstr(input);
+	ft_putendl_fd(input, (int)flag->ant_room_fd[3]);
 	ft_set_ants(road, flag->ant_room_fd[0]);
 	ft_create_road(road, room);
-	ft_putstr("\n");
 	while (i)
 	{
-		i = ft_go(flag->ant_room_fd[0], road, &j);
+		i = ft_go(flag, road, &j, ft_search_room(ft_search_st_en(room, 1), room)->name);
 		n++;
 	}
-	ft_print_bonus(n, flag, road, room);
+	ft_print_bonus(n - 1, flag, road, room);
 	ft_del_road(road);
 	ft_del_all(room, map, flag->ant_room_fd[1], input);
 }

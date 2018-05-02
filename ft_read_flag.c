@@ -16,8 +16,8 @@ int		ft_set_key(t_fflag *flag, int i, char **v)
 {
 	if (v[i][1] == 'c')
 		flag->c = 1;
-	//else if (v[i][1] == 'v')
-	//	flag->v = 1;
+	else if (v[i][1] == 'l')
+		flag->l = 1;
 	else if (v[i][1] == 'n')
 		flag->n = 1;
 	else if (v[i][1] == 'h')
@@ -29,13 +29,13 @@ int		ft_set_key(t_fflag *flag, int i, char **v)
 		flag->f = 1;
 		flag->filename = v[++i];
 	}
-	else
+	else if (v[i][1] == 'o')
 	{
-		free(flag);
-		errno = 22;
-		perror("Unknown key!");
-		ft_exit(NULL);
+		flag->o = 1;
+		flag->fileout = v[++i];
 	}
+	else
+		ft_key_err(flag);
 	return (i);
 }
 
@@ -51,12 +51,7 @@ t_fflag	*ft_read_flag(int c, char **v)
 		if (v[i][0] == '-' && ft_isalpha(v[i][1]))
 			i = ft_set_key(flag, i, v);
 		else
-		{
-			free(flag);
-			errno = 22;
-			perror("Unknown key!");
-			ft_exit(NULL);
-		}
+			ft_key_err(flag);
 		i++;
 	}
 	return (flag);

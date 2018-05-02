@@ -14,12 +14,15 @@
 
 void	ft_help(void)
 {
-	ft_printf("________________HELP_________________\n");
-	ft_printf("| %-14s %-19s|\n", "-h", "<help>");
-	//ft_printf("| %-14s %-19s|\n", "-v", "<visualization>");
-	ft_printf("| %-14s %-19s|\n", "-n", "<number of iteration>");
-	ft_printf("| %-14s %-19s|\n", "-r", "<print road>");
-	ft_printf("| %-14s %-19s|\n", "-f [file name]", "<input from file>");
-	ft_printf("| %-14s %-19s|\n", "-c", "<colour>");
-	ft_printf("|___________________________________|\n");
+	ft_printf("__________________HELP__________________\n");
+	ft_printf("| %-37s|\n", "  usage: ./lem-in [key] < mapfile");
+	ft_printf("| %-37s|\n", "               Key:");
+	ft_printf("| %-14s %-22s|\n", "-h", "<help>");
+	ft_printf("| %-14s %-22s|\n", "-l", "<length road>");
+	ft_printf("| %-14s %-22s|\n", "-n", "<number of iteration>");
+	ft_printf("| %-14s %-22s|\n", "-r", "<print road>");
+	ft_printf("| %-14s %-22s|\n", "-f [file name]", "<input from file>");
+	ft_printf("| %-14s %-22s|\n", "-o [file name]", "<output to file>");
+	ft_printf("| %-14s %-22s|\n", "-c", "<colour mod>");
+	ft_printf("|______________________________________|\n");
 }

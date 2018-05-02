@@ -40,7 +40,7 @@ int		ft_valid_nmap(int s, int e, int **map, size_t n)
 	j = 0;
 	while (j < n)
 	{
-		if (map[s][j] > map[0][0])
+		if (map[s][j] > -1)
 			vs = 1;
 		if (map[e][j] > 0)
 			ve = 1;

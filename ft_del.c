@@ -31,6 +31,8 @@ void	ft_del_dstr(char **dstr)
 	int i;
 
 	i = 0;
+	if (!dstr)
+		return ;
 	while (dstr[i])
 		ft_strdel(&dstr[i++]);
 	free(dstr);

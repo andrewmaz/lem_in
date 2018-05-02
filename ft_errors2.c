@@ -27,6 +27,21 @@ void	ft_no_ants(char *str)
 	perror("No ants");
 }
 
+void	ft_key_err(t_fflag *flag)
+{
+	free(flag);
+	errno = 22;
+	perror("Unknown key!");
+	exit(1);
+}
+
+void	ft_fd_err(t_fflag *flag)
+{
+	perror("Error!");
+	free(flag);
+	exit(1);
+}
+
 void	ft_exit(char **str)
 {
 	ft_strdel(str);

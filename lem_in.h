@@ -45,13 +45,16 @@ typedef struct	s_road
 
 typedef struct	s_fflag
 {
-  size_t	ant_room_fd[3];
+  size_t	ant_room_fd[4];
   int		c;
   int		n;
   int		h;
+  int		l;
   int		f;
+  int		o;
   int		r;
   char	*filename;
+  char	*fileout;
 }				t_fflag;
 
 t_room			*ft_new_room(void);
@@ -80,6 +83,11 @@ int				ft_read_line_err(t_room *room, int **map, size_t size, \
 int				ft_st_en_err(t_room *room, int **map, size_t size, char *str);
 void			ft_input_err(t_room *room, int **map, char *str, char *out);
 void			ft_no_ants(char *str);
+void	ft_fd_err(t_fflag *flag);
+void	ft_key_err(t_fflag *flag);
+void	ft_print_bonus(int n, t_fflag *flag, t_road *road, t_room *room);
+void		ft_print_result(t_fflag *flag, char **res, char *e);
+
 t_road			*ft_read_road(t_room *room, int **map, size_t *ant_room_fd);
 int				ft_search_st_en(t_room *room, int s_e);
 t_room			*ft_search_room(int ind, t_room *room);

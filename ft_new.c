@@ -73,6 +73,9 @@ t_fflag		*ft_new_fflag(void)
 	key->h = 0;
 	key->f = 0;
 	key->r = 0;
+	key->l = 0;
+	key->o = 0;
 	key->filename = NULL;
+	key->fileout = NULL;
 	return (key);
 }

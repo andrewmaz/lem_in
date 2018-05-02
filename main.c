@@ -13,16 +13,14 @@
 #include "lem_in.h"
 #include <fcntl.h>
 
-size_t ft_read_fd(t_fflag *flag)
+size_t ft_read_fd(t_fflag *flag, char *name)
 {
 	int	fd;
 
-	if ((fd = open(flag->filename, O_RDONLY)))
+	if ((fd = open(name, O_RDWR)) > 0)
 		return ((size_t)fd);
-	perror("Error!");
-	free(flag);
-	system("leaks lem_in_f");
-	exit(1);
+	ft_fd_err(flag);
+	return (0);
 }
 
 int main(int argc, char *argv[])
@@ -42,12 +40,15 @@ int main(int argc, char *argv[])
 		free(flag);
 		return (0);
 	}
-	flag->ant_room_fd[2] = flag->f ? ft_read_fd(flag) : 0;
+	flag->ant_room_fd[2] = flag->f ? ft_read_fd(flag, flag->filename) : 0;
+	flag->ant_room_fd[3] = flag->o ? ft_read_fd(flag, flag->fileout) : 1;
 	flag->ant_room_fd[0] = ft_read_ants((int)flag->ant_room_fd[2], &input);
 	ft_read_all(&room, &map, &input, (int)flag->ant_room_fd[2]);
 	flag->ant_room_fd[1] = ft_room_count(room);
 	ft_output(flag, room, map, input);
-	free(flag);
 	//system("leaks lem_in_f");
+	close((int)flag->ant_room_fd[2]);
+	close((int)flag->ant_room_fd[3]);
+	free(flag);
 	return (0);
 }

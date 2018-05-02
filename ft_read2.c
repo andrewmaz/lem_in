@@ -74,6 +74,43 @@ int			ft_in_last_road(t_road *road)
 	return (road->road[0]);
 }
 
+void		ft_swap_road(t_road *a, t_road *b)
+{
+	int *t;
+	t_room *m;
+	int p;
+
+	t = a->road;
+	m = a->room;
+	p = a->len;
+	a->road = b->road;
+	a->room = b->room;
+	a->len = b->len;
+	b->road = t;
+	b->room = m;
+	b->len = p;
+}
+
+t_road		*ft_sort_road(t_road *road)
+{
+	t_road *i;
+	t_road *j;
+
+	i = road;
+	while (i)
+	{
+		j = road;
+		while (j->next)
+		{
+			if (j->len > j->next->len)
+				ft_swap_road(j, j->next);
+			j = j->next;
+		}
+		i = i->next;
+	}
+	return (road);
+}
+
 t_road		*ft_read_road(t_room *room, int **map, size_t *ant_room_fd)
 {
 	t_road	*road;
@@ -98,5 +135,6 @@ t_road		*ft_read_road(t_room *room, int **map, size_t *ant_room_fd)
 		}
 		i++;
 	}
+	road = ft_sort_road(road);
 	return (road);
 }
