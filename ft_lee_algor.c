@@ -6,7 +6,7 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:55:51 by amazurok          #+#    #+#             */
-/*   Updated: 2018/05/01 14:24:03 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/03 13:32:37 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,17 @@ int			ft_max_in_map(int **nmap, size_t n)
 	return (res);
 }
 
+static int	ft_src_i(int i, int *len, int **nmap, size_t n)
+{
+	while ((i = ft_src(i, *len, nmap, n)) < 0)
+	{
+		++*len;
+		if ((*len - ft_max_in_map(nmap, n)) > 1)
+			break ;
+	}
+	return (i);
+}
+
 int			**ft_lee_algor(int s, int **map, size_t n)
 {
 	int len;
@@ -79,22 +90,16 @@ int			**ft_lee_algor(int s, int **map, size_t n)
 	i = s;
 	len = 0;
 	nmap = ft_new_map(n, -1);
-	nmap[s][s] = 0;
+	nmap[i][i] = 0;
 	while (i < (int)n)
 	{
 		j = 0;
 		while (j < (int)n)
 		{
-			if (map[i][j])
-				nmap[j][j] = ft_min(len + 1, nmap[j][j]);
+			map[i][j] ? nmap[j][j] = ft_min(len + 1, nmap[j][j]) : 0;
 			j++;
 		}
-		while ((i = ft_src(i, len, nmap, n)) < 0)
-		{
-			len++;
-			if ((len - ft_max_in_map(nmap, n)) > 1)
-				break ;
-		}
+		i = ft_src_i(i, &len, nmap, n);
 		if ((len - ft_max_in_map(nmap, n)) > 1)
 			break ;
 	}

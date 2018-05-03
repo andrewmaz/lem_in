@@ -6,7 +6,7 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 10:55:29 by amazurok          #+#    #+#             */
-/*   Updated: 2018/05/01 13:35:23 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/03 18:46:59 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,10 @@ t_room		*ft_read_rooms(char *str, t_room *room, int s_e)
 	room = ft_add_room(room);
 	head = room;
 	tmp = ft_strsplit(str, ' ');
+	if (tmp[0][0] == 'L')
+		return (ft_read_room_err(head, tmp, str, 2));
 	if (!ft_valid_room(tmp, room))
-	{
-		ft_read_room_err(head, tmp, str, 0);
-		return (NULL);
-	}
+		return (ft_read_room_err(head, tmp, str, 0));
 	while (room->next)
 		room = room->next;
 	room->name = ft_strdup(tmp[0]);
@@ -121,10 +120,7 @@ void		ft_read_all(t_room **room, int ***map, char **input, int fd)
 	while (get_next_line(fd, &str))
 	{
 		if (str[0] != '#')
-		{
-			if (!ft_non_sharp(room, map, &s_e, str))
-				ft_exit(input);
-		}
+			(!ft_non_sharp(room, map, &s_e, str)) ? ft_exit(input) : 0;
 		else
 		{
 			if ((s_e = ft_sharp(str, s_e)) <= -2)

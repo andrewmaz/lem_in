@@ -6,12 +6,11 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:29:31 by amazurok          #+#    #+#             */
-/*   Updated: 2018/05/01 11:38:13 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/03 18:23:04 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
 
 static void	ft_help_go(t_road *road, int *n)
 {
@@ -36,13 +35,13 @@ static void	ft_help_go(t_road *road, int *n)
 		if (road->room->prev)
 			road->room = road->room->prev;
 		else
-			break;
+			break ;
 	}
 }
 
-void	ft_creat_res(t_fflag *flag, t_road *road, char *res, char *e)
+void		ft_creat_res(t_fflag *flag, t_road *road, char *res, char *e)
 {
-	char *ito;
+	char	*ito;
 
 	while (road && road->room)
 	{
@@ -71,7 +70,7 @@ void	ft_creat_res(t_fflag *flag, t_road *road, char *res, char *e)
 
 static int	ft_go(t_fflag *flag, t_road *road, int *n, char *e)
 {
-	t_road *head;
+	t_road	*head;
 
 	head = road;
 	if (flag->ant_room_fd[0] == ft_in_finish(road))
@@ -115,12 +114,12 @@ static void	ft_set_ants(t_road *road, size_t ants)
 	}
 }
 
-void ft_output(t_fflag *flag, t_room *room, int **map, char *input)
+void		ft_output(t_fflag *flag, t_room *room, int **map, char *input)
 {
 	t_road	*road;
 	int		i;
 	int		j;
-	int 	n;
+	int		n;
 
 	i = 1;
 	j = 1;
@@ -134,7 +133,8 @@ void ft_output(t_fflag *flag, t_room *room, int **map, char *input)
 	ft_create_road(road, room);
 	while (i)
 	{
-		i = ft_go(flag, road, &j, ft_search_room(ft_search_st_en(room, 1), room)->name);
+		i = ft_go(flag, road, &j, \
+				ft_search_room(ft_search_st_en(room, 1), room)->name);
 		n++;
 	}
 	ft_print_bonus(n - 1, flag, road, room);

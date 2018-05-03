@@ -6,11 +6,29 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/23 11:33:42 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/24 14:39:08 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/03 15:16:29 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+size_t	ft_read_fd(t_fflag *flag, char *name, int f)
+{
+	int		fd;
+	char	*tmp;
+
+	if ((fd = open(name, O_RDWR)) > 0)
+		return ((size_t)fd);
+	else if (!f && flag->fileout && flag->fileout[0] != '-')
+	{
+		tmp = ft_strjoin("touch ", name);
+		system(tmp);
+		ft_strdel(&tmp);
+		return ((size_t)open(name, O_RDWR));
+	}
+	ft_fd_err(flag);
+	return (0);
+}
 
 int		ft_set_key(t_fflag *flag, int i, char **v)
 {

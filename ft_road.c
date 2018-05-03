@@ -6,11 +6,55 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:08:44 by amazurok          #+#    #+#             */
-/*   Updated: 2018/05/01 14:25:02 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/03 14:08:24 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+int		ft_in_last_road(t_road *road)
+{
+	while (road->next)
+		road = road->next;
+	return (road->road[0]);
+}
+
+void	ft_swap_road(t_road *a, t_road *b)
+{
+	int		*t;
+	t_room	*m;
+	int		p;
+
+	t = a->road;
+	m = a->room;
+	p = a->len;
+	a->road = b->road;
+	a->room = b->room;
+	a->len = b->len;
+	b->road = t;
+	b->room = m;
+	b->len = p;
+}
+
+t_road	*ft_sort_road(t_road *road)
+{
+	t_road *i;
+	t_road *j;
+
+	i = road;
+	while (i)
+	{
+		j = road;
+		while (j->next)
+		{
+			if (j->len > j->next->len)
+				ft_swap_road(j, j->next);
+			j = j->next;
+		}
+		i = i->next;
+	}
+	return (road);
+}
 
 void	ft_copy_lst(t_room *new, t_room *old)
 {

@@ -6,7 +6,7 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:47:37 by amazurok          #+#    #+#             */
-/*   Updated: 2018/05/01 14:30:15 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/03 18:22:41 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_valid_nmap(int s, int e, int **map, size_t n)
 	{
 		if (map[s][j] > -1)
 			vs = 1;
-		if (map[e][j] > 0)
+		if (map[e][j] > -1)
 			ve = 1;
 		j++;
 	}

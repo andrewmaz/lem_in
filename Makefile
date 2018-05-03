@@ -17,8 +17,6 @@ SRC = ft_add.c ft_addit_func.c ft_del.c ft_errors.c ft_help.c ft_int_operat.c \
 		ft_read_flag.c ft_road.c ft_search.c ft_valid.c main.c ft_errors2.c \
 		ft_del2.c ft_print.c
 
-OSRC = $(patsubst %.c, %.o, $(SRC))
-
 MLIB = make -C libftprintf
 
 LIB = libftprintf/libftprintf.a
@@ -34,7 +32,7 @@ clean:
 	$(MLIB) clean
 
 fclean: clean
-	rm -f $(NAME_PS) $(NAME_CH)
+	rm -f $(NAME)
 	$(MLIB) fclean
 
 re: fclean all

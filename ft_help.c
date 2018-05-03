@@ -6,7 +6,7 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 14:26:16 by amazurok          #+#    #+#             */
-/*   Updated: 2018/04/24 14:29:11 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/03 14:20:43 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ void	ft_help(void)
 	ft_printf("| %-14s %-22s|\n", "-f [file name]", "<input from file>");
 	ft_printf("| %-14s %-22s|\n", "-o [file name]", "<output to file>");
 	ft_printf("| %-14s %-22s|\n", "-c", "<colour mod>");
+	ft_printf("| %-14s {red}%-22s{eoc}|\n", "", "<START>");
+	ft_printf("| %-14s {green}%-22s{eoc}|\n", "", "<END>");
 	ft_printf("|______________________________________|\n");
 }

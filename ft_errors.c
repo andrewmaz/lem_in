@@ -6,7 +6,7 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 13:20:12 by amazurok          #+#    #+#             */
-/*   Updated: 2018/05/01 13:37:29 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/03 18:34:56 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 void		ft_read_ant_err(char *str)
 {
 	errno = 5;
-	ft_strdel(&str);
 	perror("Number of ants must be a positive integer!");
-	exit(1);
+	ft_exit(&str);
 }
 
 void		*ft_read_room_err(t_room *room, char **str, char *s, int r_c)
@@ -26,8 +25,9 @@ void		*ft_read_room_err(t_room *room, char **str, char *s, int r_c)
 	ft_strdel(&s);
 	ft_del_room(room);
 	str ? ft_del_dstr(str) : 0;
-	r_c ? perror("The rooms coordinates will always be integers!") : \
-		perror("The rooms name/coordinates already exist!");
+	r_c == 0 ? perror("The rooms name/coordinates already exist!") : 0;
+	r_c == 1 ? perror("The rooms coordinates will always be integers!") : 0;
+	r_c == 2 ? perror("Room name will never start with the character L!") : 0;
 	return (NULL);
 }
 

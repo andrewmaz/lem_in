@@ -71,6 +71,7 @@ t_fflag		*ft_new_fflag(void)
 	key->c = 0;
 	key->n = 0;
 	key->h = 0;
+	key->a = 1;
 	key->f = 0;
 	key->r = 0;
 	key->l = 0;
