@@ -6,7 +6,7 @@
 /*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 16:48:40 by amazurok          #+#    #+#             */
-/*   Updated: 2018/05/03 18:41:52 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/05/04 12:08:22 by amazurok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,5 @@ void	ft_fd_err(t_fflag *flag)
 void	ft_exit(char **str)
 {
 	ft_strdel(str);
-	system("leaks lem-in");
 	exit(1);
 }
